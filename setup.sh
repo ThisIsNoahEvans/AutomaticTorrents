@@ -19,7 +19,7 @@ mkdir /etc/openvpn
 mkdir /nordvpn && cd /nordvpn
 touch /nordvpn/userpass.txt
 echo ":: Adding user and password..."
-printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
+( echo $NORD_USERNAME ; echo $NORD_PASSWORD) > "/nordvpn/userpass.txt"
 
 
 # Download and unzip the NordVPN servers
