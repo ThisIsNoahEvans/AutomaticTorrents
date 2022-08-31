@@ -15,7 +15,7 @@ RUN add-apt-repository ppa:transmissionbt/ppa
 # Update repositories & upgrade packages
 RUN apt update && apt upgrade -y
 # Install dependencies
-RUN apt install transmission-gtk transmission-cli transmission-common transmission-daemo openvpn wget curl nano ca-certificates unzip -y
+RUN apt install transmission-gtk transmission-cli transmission-common transmission-daemon openvpn wget curl nano ca-certificates unzip -y
 
 
 
