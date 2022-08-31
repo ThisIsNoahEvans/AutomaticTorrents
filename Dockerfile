@@ -19,7 +19,7 @@ RUN apt install transmission-gtk transmission-cli transmission-common transmissi
 
 
 
-# Run the install script 
+# Run the setup script 
 CMD curl -sSL https://github.com/ThisIsNoahEvans/AutomaticTorrents/raw/main/setup.sh | bash
 
 EXPOSE 9091
