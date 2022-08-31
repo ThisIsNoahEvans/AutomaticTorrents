@@ -1,12 +1,16 @@
 # Ubuntu 20.04
 FROM ubuntu:focal
 
-# Update and install the required packages
+# Update repositories & install dependencies for PPA
 RUN apt update
 RUN apt install software-properties-common -y
 RUN add-apt-repository ppa:transmissionbt/ppa
+# Update repositories & upgrade packages
 RUN apt update && apt upgrade -y
+# Install transmission
 RUN apt install transmission-gtk transmission-cli transmission-common transmission-daemon -y
+# Install jq
+RUN apt install jq -y
 
 # Start 
 CMD service transmission-daemon start && sleep infinity
