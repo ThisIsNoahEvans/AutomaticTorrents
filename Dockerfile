@@ -2,7 +2,7 @@
 FROM ubuntu:focal
 
 # Update and install the required packages
-RUN apt update && apt upgrade -y
+RUN apt update
 RUN apt install software-properties-common -y
 RUN add-apt-repository ppa:transmissionbt/ppa
 RUN apt update && apt upgrade -y
