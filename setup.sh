@@ -31,11 +31,6 @@ rm ovpn.zip
 echo ":: CD to /etc/openvpn/ovpn_udp/ "
 cd /etc/openvpn/ovpn_udp/
 
-# Create network device for VPN
-#mkdir -p /dev/net
-#mknod /dev/net/tun c 10 200
-#chmod 777 /dev/net/tun
-
 # Connect to NordVPN
 openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt
 echo "Connected to NordVPN!"
