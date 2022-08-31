@@ -9,6 +9,6 @@ RUN apt update && apt upgrade -y
 RUN apt install transmission-gtk transmission-cli transmission-common transmission-daemon -y
 
 # Start 
-CMD service transmission-daemon start
+CMD service transmission-daemon start && sleep infinity
 
 EXPOSE 9091
