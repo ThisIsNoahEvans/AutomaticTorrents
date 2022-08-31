@@ -32,18 +32,9 @@ echo ":: CD to /etc/openvpn/ovpn_udp/ "
 cd /etc/openvpn/ovpn_udp/
 
 # Create network device for VPN
-if ( [ ! -c /dev/net/tun ] ); then
-    if ( [ ! -d /dev/net ] ); then
-        mkdir -m 755 /dev/net
-    fi
-    mknod /dev/net/tun c 10 200
-fi
- 
-# Load the tun module if not already loaded
-if ( !(lsmod | grep -q "^tun\s") ); then
-    insmod /lib/modules/tun.ko
- 
-fi
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 0666 /dev/net/tun
 
 # Connect to NordVPN
 openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt
