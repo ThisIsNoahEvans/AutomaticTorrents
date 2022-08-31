@@ -15,6 +15,7 @@ service transmission-daemon start
 echo "Configuring NordVPN..."
 # Save the NordVPN configuration file
 mkdir /nordvpn && cd /nordvpn
+touch /nordvpn/userpass.txt
 printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
 # Download and unzip the NordVPN servers
 wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
