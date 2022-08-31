@@ -14,6 +14,7 @@ service transmission-daemon start
 
 echo "Configuring NordVPN..."
 # Save the NordVPN configuration file
+mkdir /nordvpn
 printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
 # Setup NordVPN
 cd /etc/openvpn
