@@ -37,7 +37,7 @@ mknod /dev/net/tun c 10 200
 chmod 777 /dev/net/tun
 
 # Connect to NordVPN
-openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt --dev tun
+openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt --dev /dev/net/tun 
 echo "Connected to NordVPN!"
 
 sleep infinity
