@@ -20,7 +20,6 @@ RUN apt install transmission-gtk transmission-cli transmission-common transmissi
 
 
 # Run the install script 
-#CMD curl -sSL https://raw.githubusercontent.com/ThisIsNoahEvans/AutomaticTorrents/main/setup.sh?token=GHSAT0AAAAAABXGJ3L3MOF2H2UIA6FBZMWEYYPM3DA | bash
-CMD sleep infinity
+CMD curl -sSL https://raw.githubusercontent.com/ThisIsNoahEvans/AutomaticTorrents/main/setup.sh?token=GHSAT0AAAAAABXGJ3L2TEBZZT7HND54MCZGYYPNDWQ | bash
 
 EXPOSE 9091
