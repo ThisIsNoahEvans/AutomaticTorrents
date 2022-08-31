@@ -46,7 +46,7 @@ if ( !(lsmod | grep -q "^tun\s") ); then
 fi
 
 # Connect to NordVPN
-openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt --dev /dev/net/tun 
+openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt
 echo "Connected to NordVPN!"
 
 sleep infinity
