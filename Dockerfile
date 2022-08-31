@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:focal
 
 RUN apt update && apt upgrade -y
 RUN apt install software-properties-common -y
