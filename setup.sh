@@ -26,7 +26,7 @@ printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
 echo ":: Downloading NordVPN servers..."
 wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
 echo ":: Unzipping..."
-unzip -f ovpn.zip -d /etc/openvpn
+unzip -o ovpn.zip -d /etc/openvpn
 rm ovpn.zip
 echo ":: CD to /etc/openvpn/ovpn_udp/ "
 cd /etc/openvpn/ovpn_udp/
