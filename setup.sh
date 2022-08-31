@@ -4,6 +4,10 @@
 # Configure Transmission and OpenVPN in the container.                         #
 ################################################################################
 
+echo "Configuring DNS..."
+# Set Cloudflare DNS
+echo 'nameserver 1.1.1.1' > /etc/resolv.conf
+
 echo "Configuring Transmission..."
 # Stop Transmission
 service transmission-daemon stop

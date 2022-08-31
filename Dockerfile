@@ -7,8 +7,6 @@ RUN sysctl -w net.ipv6.conf.all.disable_ipv6=1
 RUN sysctl -w net.ipv6.conf.default.disable_ipv6=1
 RUN sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 
-# Configure Cloudflare DNS
-RUN echo 'nameserver 1.1.1.1' > /etc/resolv.conf
 
 # Update repositories & install dependencies for PPA
 RUN apt update
