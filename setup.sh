@@ -12,15 +12,23 @@ wget 'https://cdn.itsnoahevans.co.uk/content/automatictorrents/transmission-conf
 # Start Transmission
 service transmission-daemon start
 
-echo "Configuring NordVPN..."
+echo ":: Configuring NordVPN..."
 # Save the NordVPN configuration file
+echo ":: Creating files..."
+mkdir /etc/openvpn
 mkdir /nordvpn && cd /nordvpn
 touch /nordvpn/userpass.txt
+echo ":: Adding user and password..."
 printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
+
+
 # Download and unzip the NordVPN servers
+echo ":: Downloading NordVPN servers..."
 wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
+echo ":: Unzipping..."
 unzip -f ovpn.zip -d /etc/openvpn
 rm ovpn.zip
+echo ":: CD to /etc/openvpn/ovpn_udp/ "
 cd /etc/openvpn/ovpn_udp/
 ls
 
