@@ -13,10 +13,6 @@ wget 'https://cdn.itsnoahevans.co.uk/content/automatictorrents/transmission-conf
 service transmission-daemon start
 
 echo "Configuring NordVPN..."
-# Disable IPv6 for VPN
-sysctl -w net.ipv6.conf.all.disable_ipv6=1
-sysctl -w net.ipv6.conf.default.disable_ipv6=1
-sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 # Save the NordVPN configuration file
 printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
 # Setup NordVPN
