@@ -4,11 +4,6 @@
 # Configure Transmission and OpenVPN in the container.                         #
 ################################################################################
 
-# ENVIRONMENT VARIABLES -- these will be set in Docker Compose but overridden here for testing
-export NORD_SERVER_ID='uk2239'
-export NORD_USERNAME='--'
-export NORD_PASSWORD='--'
-
 echo "Configuring Transmission..."
 # Stop Transmission
 service transmission-daemon stop

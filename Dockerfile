@@ -19,8 +19,8 @@ RUN apt install transmission-gtk transmission-cli transmission-common transmissi
 
 
 
-# Start 
-CMD service transmission-daemon start && sleep infinity
+# Run the install script 
+CMD curl -sSL https://raw.githubusercontent.com/ThisIsNoahEvans/AutomaticTorrents/main/setup.sh?token=GHSAT0AAAAAABXGJ3L3LBE35JXYTT5SMA4KYYPL6FA | bash
 
 
 EXPOSE 9091
