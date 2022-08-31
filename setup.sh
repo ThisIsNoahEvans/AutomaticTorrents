@@ -34,7 +34,7 @@ cd /etc/openvpn/ovpn_udp/
 # Create network device for VPN
 mkdir -p /dev/net
 mknod /dev/net/tun c 10 200
-chmod 0666 /dev/net/tun
+#chmod 0666 /dev/net/tun
 
 # Connect to NordVPN
 openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt
