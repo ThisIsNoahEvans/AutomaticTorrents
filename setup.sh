@@ -25,5 +25,6 @@ wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
 unzip ovpn.zip
 rm ovpn.zip
 cd /etc/openvpn/ovpn_udp/
+ls
 openvpn `$NORD_SERVER_ID.nordvpn.com.udp.ovpn` --auth-user-pass /nordvpn/userpass.txt
 echo "Connected to NordVPN!"
