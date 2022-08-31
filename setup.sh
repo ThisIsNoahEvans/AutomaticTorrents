@@ -22,7 +22,7 @@ printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
 # Setup NordVPN
 cd /etc/openvpn
 wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
-unzip -o ovpn.zip
+unzip -f ovpn.zip
 rm ovpn.zip
 cd /etc/openvpn/ovpn_udp/
 ls
