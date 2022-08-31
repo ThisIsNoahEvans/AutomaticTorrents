@@ -9,8 +9,8 @@ RUN add-apt-repository ppa:transmissionbt/ppa
 RUN apt update && apt upgrade -y
 # Install transmission
 RUN apt install transmission-gtk transmission-cli transmission-common transmission-daemon -y
-# Install jq & nano
-RUN apt install jq nano -y
+# Install wget, curl, nano
+RUN apt install wget curl nano -y
 
 # Start 
 CMD service transmission-daemon start && sleep infinity
