@@ -14,15 +14,16 @@ service transmission-daemon start
 
 echo "Configuring NordVPN..."
 # Save the NordVPN configuration file
-mkdir /nordvpn
+mkdir /nordvpn && cd /nordvpn
 printf "%s" "$NORD_USERNAME\n$NORD_PASSWORD" > "/nordvpn/userpass.txt"
-# Setup NordVPN
-cd /etc/openvpn
+# Download and unzip the NordVPN servers
 wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
-unzip -f ovpn.zip
+unzip -f ovpn.zip -d /etc/openvpn
 rm ovpn.zip
 cd /etc/openvpn/ovpn_udp/
 ls
+
+# Connect to NordVPN
 #openvpn `$NORD_SERVER_ID.nordvpn.com.udp.ovpn` --auth-user-pass /nordvpn/userpass.txt
 echo "Connected to NordVPN!"
 
