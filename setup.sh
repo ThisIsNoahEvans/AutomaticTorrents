@@ -26,14 +26,15 @@ echo ":: Adding user and password..."
 echo ":: Downloading NordVPN servers..."
 wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
 echo ":: Unzipping..."
-unzip -o -q ovpn.zip -d /etc/openvpn
+unzip -o -q ovpn.zip -d /etc/openvpn # Unzip and overwrite any existing content
 rm ovpn.zip
-echo ":: CD to /etc/openvpn/ovpn_udp/ "
 cd /etc/openvpn/ovpn_udp/
 
 # Connect to NordVPN
+echo ":: Connecting to NordVPN..."
 openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt
 echo "Connected to NordVPN!"
 
+echo "::::::::::::: LAUNCH COMPLETE :::::::::::::"
 # Keep the container running
 sleep infinity
