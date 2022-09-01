@@ -5,13 +5,13 @@
 ################################################################################
 
 echo "Configuring DNS..."
-# Set Cloudflare DNS
+# Set Cloudflare DNS - NordVPN will eventually override this, but to allow network access until then
 echo 'nameserver 1.1.1.1' > /etc/resolv.conf
 
 echo "Configuring Transmission..."
 # Stop Transmission
 service transmission-daemon stop
-# Update the Transmission configuration file -- this will eventually be on GitHub when the repo is public
+# Update the Transmission configuration file
 wget 'https://github.com/ThisIsNoahEvans/AutomaticTorrents/raw/main/transmission-config.json' -O /etc/transmission-daemon/settings.json
 # Start Transmission
 service transmission-daemon start
