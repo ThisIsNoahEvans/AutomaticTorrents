@@ -20,6 +20,7 @@ Only NordVPN is supported for now. Custom OpenVPN configuration will be availabl
 Whilst this project is nowhere near completion, you may build it by cloning the repo, opening a Terminal to the `AutomaticTorrents` directory, and running the below commands:
 
 `docker build -t thisisnoahevans/automatictorrents .`
+
 `docker run --name=automatictorrents -e NORD_USERNAME=username -e NORD_PASSWORD=password -e NORD_SERVER_ID=server -e NORD_PROTOCOL=proto -p 9091:9091 --cap-add=NET_ADMIN --device /dev/net/tun -d thisisnoahevans/automatictorrents`
 
 Find your NordVPN username & password [here](https://my.nordaccount.com/dashboard/nordvpn) and add them to the command.
