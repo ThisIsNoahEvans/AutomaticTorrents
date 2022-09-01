@@ -32,11 +32,11 @@ wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip
 echo ":: Unzipping..."
 unzip -o -q ovpn.zip -d /etc/openvpn # Unzip and overwrite any existing content
 rm ovpn.zip
-cd /etc/openvpn/ovpn_udp/
+cd /etc/openvpn/ovpn_$NORD_PROTOCOL/
 
 # Connect to NordVPN
 echo ":: Connecting to NordVPN..."
-openvpn --config "$NORD_SERVER_ID.nordvpn.com.udp.ovpn" --auth-user-pass /nordvpn/userpass.txt
+openvpn --config "$NORD_SERVER_ID.nordvpn.com.$NORD_PROTOCOL.ovpn" --auth-user-pass /nordvpn/userpass.txt
 echo "Connected to NordVPN!"
 
 echo "::::::::::::: LAUNCH COMPLETE :::::::::::::"
