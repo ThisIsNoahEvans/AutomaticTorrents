@@ -8,6 +8,12 @@ echo "Configuring DNS..."
 # Set Cloudflare DNS - NordVPN will eventually override this, but to allow network access until then
 echo 'nameserver 1.1.1.1' > /etc/resolv.conf
 
+echo "Disabling IPv6..."
+# Disable IPv6 for VPN
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+
 echo "Configuring Transmission..."
 # Stop Transmission
 service transmission-daemon stop
