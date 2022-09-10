@@ -109,7 +109,7 @@ RUN \
         ffmpeg-libs \
         # The following package is used to send key presses to the X process.
         xdotool \
-        curl \
+        curl 
 
 # Set default settings.
 RUN \
